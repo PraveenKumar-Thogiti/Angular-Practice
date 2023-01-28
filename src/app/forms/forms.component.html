@@ -1,0 +1,38 @@
+
+<h1 style="text-align:center">Reactive Forms</h1>
+<div>
+    <form [formGroup]="empForm">
+    <div>
+
+        <label>Name</label>
+        <input type="text" formControlName="name">
+        <div *ngIf="formValid['name'].touched &&formValid['name'].errors && formValid['name'].errors['required']">
+                    Name is required
+        </div>
+        <div *ngIf="formValid['name'].touched && formValid['name'].errors &&  formValid['name'].errors['maxlength']">length exceeded</div>
+        </div>
+    <div>
+
+        <label>Email</label>
+        <input type="email" formControlName="email">
+        <div *ngIf="formValid['email'].touched &&formValid['email'].errors && formValid['email'].errors['email']">
+            Invalid Email Id
+            </div>
+            
+
+    </div>
+    <div>
+
+        <label>Age</label>
+        <input type="number" formControlName="age">
+        <div *ngIf="formValid['age'].touched &&formValid['age'].errors && formValid['age'].errors['max']">
+            musaloda
+            </div>
+
+    </div>
+    <div>
+        <button (click)="submit()">Submit</button>
+        <button (click)="reset()">Reset</button>
+    </div>
+    </form>
+</div>

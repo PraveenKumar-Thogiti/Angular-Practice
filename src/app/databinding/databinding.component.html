@@ -1,0 +1,12 @@
+<p>databinding works!</p>
+
+<!-- interpolation -->
+<p>{{Name}}</p> 
+<input [value]="test"  type="text">
+<!-- event binding  -->
+<button (click)="change()">change</button>
+<!-- two way binding -->
+<div>
+    <input [(ngModel)]="company" type="text">
+</div>
+{{company}}
